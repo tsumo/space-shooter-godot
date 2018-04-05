@@ -1,22 +1,20 @@
-extends Sprite
+extends Node2D
 
-var SPEED = 100
-
-var vel = Vector2()
+var MAXSPEED = 1.6
 
 func _ready():
 	set_process(true)
 
 func _process(delta):
-	var direction
+	var key_dir = Vector2()
 
 	if Input.is_action_pressed("ui_up"):
-		direction += Vector2(0, -1)
-	elif Input.is_action_pressed("ui_down"):
-		direction -= Vector2(0, 1)
-	elif Input.is_action_pressed("ui_right"):
-		direction -= Vector2(1, 0)
-	elif Input.is_action_pressed("ui_left"):
-		direction -= Vector2(-1, 0)
+		key_dir += Vector2(0, -1)
+	if Input.is_action_pressed("ui_down"):
+		key_dir += Vector2(0, 1)
+	if Input.is_action_pressed("ui_right"):
+		key_dir += Vector2(1, 0)
+	if Input.is_action_pressed("ui_left"):
+		key_dir += Vector2(-1, 0)
 
-	
+	position += (key_dir.normalized() * MAXSPEED)
