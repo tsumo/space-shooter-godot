@@ -14,7 +14,7 @@ func _process(delta):
 
 	var viewport_height = get_viewport().size.y
 	if bg_sprite1.position.y >= viewport_height:
-		bg_sprite1.position.y = bg_sprite2.position.y - 320
+		bg_sprite1.position.y = bg_sprite2.position.y - viewport_height
 	if bg_sprite2.position.y >= viewport_height:
-		bg_sprite2.position.y = bg_sprite1.position.y - 320
+		bg_sprite2.position.y = bg_sprite1.position.y - viewport_height
 
