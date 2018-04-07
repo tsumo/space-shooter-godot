@@ -1,12 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://images/bullet.png" type="Texture" id=1]
+[ext_resource path="res://scripts/bullet.gd" type="Script" id=2]
 
-[node name="bullet" type="Sprite" index="0"]
+[node name="Bullet" type="Sprite" index="0"]
 
+z_index = 100
 texture = ExtResource( 1 )
 centered = false
 offset = Vector2( 0, -8 )
-_sections_unfolded = [ "Offset" ]
+script = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Z Index" ]
 
 

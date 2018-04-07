@@ -14,15 +14,17 @@ animations = [ {
 "speed": 3.0
 } ]
 
-[node name="player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
+z_index = 200
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
-[node name="ship" type="Sprite" parent="." index="0"]
+[node name="Ship" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="flames" type="AnimatedSprite" parent="." index="1"]
+[node name="Flames" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 0, 26 )
 frames = SubResource( 1 )
