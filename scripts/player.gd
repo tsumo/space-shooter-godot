@@ -24,7 +24,17 @@ func _process(delta):
 	if Input.is_action_pressed("ui_select"):
 		fire()
 
+	# Screen edges
+	if position.x < 5 and dir.x < 0:
+		dir.x = 0
+	if position.x > get_viewport().size.x - 5 and dir.x > 0:
+		dir.x = 0
+	if position.y < 5 and dir.y < 0:
+		dir.y = 0
+	if position.y > get_viewport().size.y - 10 and dir.y > 0:
+		dir.y = 0
 	position += (dir.normalized() * SPEED)
+
 	reload_timer -= delta
 
 func fire():
