@@ -13,6 +13,7 @@ func _ready():
 func _process(delta):
 	var dir = Vector2()
 
+	# TODO: null-cancelling movement
 	if Input.is_action_pressed("ui_up"):
 		dir += Vector2(0, -1)
 	if Input.is_action_pressed("ui_down"):
@@ -21,6 +22,7 @@ func _process(delta):
 		dir += Vector2(1, 0)
 	if Input.is_action_pressed("ui_left"):
 		dir += Vector2(-1, 0)
+
 	if Input.is_action_pressed("ui_select"):
 		fire()
 
@@ -33,6 +35,7 @@ func _process(delta):
 		dir.y = 0
 	if position.y > get_viewport().size.y - 10 and dir.y > 0:
 		dir.y = 0
+
 	position += (dir.normalized() * SPEED)
 
 	reload_timer -= delta
