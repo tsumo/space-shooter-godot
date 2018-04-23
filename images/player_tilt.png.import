@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background.png-23e4ff24ed3606e496e606d42ded004c.stex"
+path="res://.import/player_tilt.png-8f4fe90703d4ab6e43ff1b10f49d0d9a.stex"
 
 [deps]
 
-source_file="res://images/background.png"
-source_md5="d001fd8f8c4ffe247bb713601a7603b6"
+source_file="res://images/player_tilt.png"
+source_md5="266c4d6208fe264fb65d1d9364b5eb5f"
 
-dest_files=[ "res://.import/background.png-23e4ff24ed3606e496e606d42ded004c.stex" ]
-dest_md5="effd0f7583e1a7e2d9227764fa81e675"
+dest_files=[ "res://.import/player_tilt.png-8f4fe90703d4ab6e43ff1b10f49d0d9a.stex" ]
+dest_md5="5fff63b408351e12a867299cd8564cd3"
 
 [params]
 
@@ -18,7 +18,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=1
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

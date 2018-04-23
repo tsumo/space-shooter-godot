@@ -14,7 +14,7 @@ _sections_unfolded = [ "Transform" ]
 
 script = ExtResource( 2 )
 
-[node name="Background1" type="Sprite" parent="Background" index="0"]
+[node name="Stars1" type="Sprite" parent="Background" index="0"]
 
 texture = ExtResource( 3 )
 centered = false
@@ -22,7 +22,7 @@ region_enabled = true
 region_rect = Rect2( 32, 32, 240, 320 )
 _sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="Background2" type="Sprite" parent="Background" index="1"]
+[node name="Stars2" type="Sprite" parent="Background" index="1"]
 
 position = Vector2( 0, -320 )
 texture = ExtResource( 3 )

@@ -1,21 +1,22 @@
 extends Node2D
 
-const SPEED = 0.7
+const STARS_SPEED = 0.7
 
-onready var Background1 = get_node("Background1")
-onready var Background2 = get_node("Background2")
+onready var Stars1 = get_node("Stars1")
+onready var Stars2 = get_node("Stars2")
 
 func _ready():
 	OS.set_window_size(OS.get_window_size() * 2)
 	OS.center_window()
+	# TODO: move randomize to the init script
+	randomize()
 
 func _process(delta):
-	Background1.position.y += SPEED
-	Background2.position.y += SPEED
+	Stars1.position.y += STARS_SPEED
+	Stars2.position.y += STARS_SPEED
 
 	var viewport_height = get_viewport().size.y
-	if Background1.position.y >= viewport_height:
-		Background1.position.y = Background2.position.y - viewport_height
-	if Background2.position.y >= viewport_height:
-		Background2.position.y = Background1.position.y - viewport_height
-
+	if Stars1.position.y >= viewport_height:
+		Stars1.position.y = Stars2.position.y - viewport_height
+	if Stars2.position.y >= viewport_height:
+		Stars2.position.y = Stars1.position.y - viewport_height

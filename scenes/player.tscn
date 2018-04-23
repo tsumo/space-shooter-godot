@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://images/player.png" type="Texture" id=2]
-[ext_resource path="res://images/flame1.png" type="Texture" id=3]
-[ext_resource path="res://images/flame2.png" type="Texture" id=4]
+[ext_resource path="res://images/player_tilt.png" type="Texture" id=3]
+[ext_resource path="res://images/flame1.png" type="Texture" id=4]
+[ext_resource path="res://images/flame2.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 3.0
@@ -24,7 +25,20 @@ _sections_unfolded = [ "Z Index" ]
 
 texture = ExtResource( 2 )
 
-[node name="Flames" type="AnimatedSprite" parent="." index="1"]
+[node name="Ship_tilt_right" type="Sprite" parent="." index="1"]
+
+visible = false
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset" ]
+
+[node name="Ship_tilt_left" type="Sprite" parent="." index="2"]
+
+visible = false
+texture = ExtResource( 3 )
+flip_h = true
+_sections_unfolded = [ "Offset" ]
+
+[node name="Flame" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 0, 26 )
 frames = SubResource( 1 )

@@ -7,23 +7,38 @@ var reload_timer = 0
 
 var BulletScn = preload("res://scenes/bullet.tscn")
 
+onready var Ship = get_node("Ship")
+onready var Ship_tilt_right = get_node("Ship_tilt_right")
+onready var Ship_tilt_left = get_node("Ship_tilt_left")
+
 func _ready():
 	set_process(true)
 
 func _process(delta):
 	var dir = Vector2()
 
-	# TODO: null-cancelling movement
-	if Input.is_action_pressed("ui_up"):
-		dir += Vector2(0, -1)
-	if Input.is_action_pressed("ui_down"):
-		dir += Vector2(0, 1)
-	if Input.is_action_pressed("ui_right"):
-		dir += Vector2(1, 0)
-	if Input.is_action_pressed("ui_left"):
-		dir += Vector2(-1, 0)
+	Ship.show()
+	Ship_tilt_left.hide()
+	Ship_tilt_right.hide()
 
-	if Input.is_action_pressed("ui_select"):
+	# TODO: null-cancelling movement
+	# TODO: acceleration
+	if Input.is_action_pressed("move_up"):
+		dir += Vector2(0, -1)
+	if Input.is_action_pressed("move_down"):
+		dir += Vector2(0, 1)
+	if Input.is_action_pressed("move_right"):
+		dir += Vector2(1, 0)
+		Ship.hide()
+		Ship_tilt_left.hide()
+		Ship_tilt_right.show()
+	if Input.is_action_pressed("move_left"):
+		dir += Vector2(-1, 0)
+		Ship.hide()
+		Ship_tilt_right.hide()
+		Ship_tilt_left.show()
+
+	if Input.is_action_pressed("fire"):
 		fire()
 
 	# Screen edges
