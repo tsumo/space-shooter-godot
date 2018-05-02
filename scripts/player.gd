@@ -11,10 +11,15 @@ onready var Ship = get_node("Ship")
 onready var Ship_tilt_right = get_node("Ship_tilt_right")
 onready var Ship_tilt_left = get_node("Ship_tilt_left")
 
+
 func _ready():
 	set_process(true)
 
+
 func _process(delta):
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
 	var dir = Vector2()
 
 	Ship.show()
@@ -54,6 +59,7 @@ func _process(delta):
 	position += (dir.normalized() * SPEED)
 
 	reload_timer -= delta
+
 
 func fire():
 	if reload_timer <= 0:

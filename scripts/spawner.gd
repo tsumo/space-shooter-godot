@@ -6,14 +6,17 @@ const RATE = 0.8
 
 var rate_timer = 0
 
+
 func _ready():
 	pass
+
 
 func _process(delta):
 	rate_timer -= delta
 	if rate_timer <= 0:
 		spawn()
 		rate_timer = RATE
+
 
 func spawn():
 	var enemy = EnemyScn.instance()
